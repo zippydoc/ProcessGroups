@@ -1,0 +1,40 @@
+name: Apply Tags
+isPaused: false
+processes:
+  - name: Process Input
+    isPaused: false
+    isVisible: true
+    folders:
+      - /Users/tobias/Documents/Claude/Eingang
+    skills:
+      - File to Markdown
+  - name: Categorize Input
+    isPaused: false
+    isVisible: true
+    folders:
+      - /Users/tobias/ZippyDoc/Process Input/File to Markdown
+    skills:
+      - Apply Tags
+  - name: Process Invoices
+    isPaused: false
+    isVisible: true
+    skills:
+      - Apply Tags
+      - Extract amounts
+    tagInputs:
+      - name: Eingang/Rechnung
+        value: 
+        kind: simple
+      - name: Eingang/Quittung
+        value: 
+        kind: simple
+  - name: Eingang Sonstige
+    isPaused: false
+    isVisible: true
+    skills:
+      - Apply Tags
+      - Summarize file
+    tagInputs:
+      - name: Eingang/Sonstige
+        value: 
+        kind: simple
